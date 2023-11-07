@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>动画库 | 弄晴</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="弄晴">
+    
+    <link rel="preload" href="/assets/css/0.styles.35bcedcf.css" as="style"><link rel="preload" href="/assets/js/app.8320141a.js" as="script"><link rel="preload" href="/assets/js/2.f66afc67.js" as="script"><link rel="preload" href="/assets/js/8.075f9de0.js" as="script"><link rel="prefetch" href="/assets/js/10.62c773ff.js"><link rel="prefetch" href="/assets/js/11.34d42e1a.js"><link rel="prefetch" href="/assets/js/12.c097e03b.js"><link rel="prefetch" href="/assets/js/3.de7e3bc8.js"><link rel="prefetch" href="/assets/js/4.ff3ef254.js"><link rel="prefetch" href="/assets/js/5.b785003b.js"><link rel="prefetch" href="/assets/js/6.f0091315.js"><link rel="prefetch" href="/assets/js/7.75c21faf.js"><link rel="prefetch" href="/assets/js/9.993b1cc2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35bcedcf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/hero.png" alt="弄晴" class="logo"> <span class="site-name can-hide">弄晴</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" aria-current="page" class="sidebar-link">Hello World</a></li><li><a href="/contact.html" class="sidebar-link">项目问题点</a></li><li><a href="/about.html" aria-current="page" class="active sidebar-link">动画库</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="动画库"><a href="#动画库" class="header-anchor">#</a> 动画库</h2> <h4 id="数字滚动效果"><a href="#数字滚动效果" class="header-anchor">#</a> 数字滚动效果</h4> <div class="language- extra-class"><pre><code>.container .num-box {
+  display: inline block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  overflow: hidden;
+  font-size: 50px;
+  line-height: 50px;
+  .container .num-box &gt; span {
+    display: inline block;
+    width: 100%;
+    height: 1000%;
+    transition: transform ls ease-in-out;
+  }
+}
+const creatNum = function (el, runNum) {
+  let computeNumber = runNum.tostring().split ('')
+  let childrenEl = document.getElementsByClassName(el)[0]
+  if(!childrenEl.children.length) {
+    for (let i = 0; i &lt; computeNumber.length; i++) {
+      // 创建span节点
+      var spanParent = document.createElement('span')
+      var spanSon = document.createElement('span')
+      // 创建文本节点
+      var node = document.createTextNode('0123456789')spanSon.appendchild(node)
+      spanParent.append(spanSon)
+      spanParent.className = &quot;num-box&quot;
+      document.getElementsBylassName(el)[0].append(spanParent)
+    }
+  }
+
+  function setTransform() {
+    let boxParent = document.getElementsByClassName(el)[0]
+    let boxsItem = boxParent.getElementsByClassName('num-box')
+    let spans = []
+    for(let i = 0; i &lt; boxsItem,length; i++) {
+      spans.push(boxsItem[i].getElementsByTagName ('span')[0])
+    }
+    for(let i = 0; i &lt; spans.length; i++) {
+      let el = spans[i]
+      el.style.transform = `translate(0%, -${computeNumber[i] * 10}%)`
+    }
+  }
+}
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/3/2023, 5:35:41 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/contact.html" class="prev">
+        项目问题点
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8320141a.js" defer></script><script src="/assets/js/2.f66afc67.js" defer></script><script src="/assets/js/8.075f9de0.js" defer></script>
+  </body>
+</html>
